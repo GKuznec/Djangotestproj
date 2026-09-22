@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8"/>
+    <title>Tracker</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<form method="post" action="">
+    {% csrf_token %}
+    <p>Balance</p>
+    <input type="text" size="40" name="balance">
+
+    <p>Expenses</p>
+    <input type="number" size="40" name="expenses">
+
+    <p>Incomes</p>
+    <input type="number" size="40" name="incomes"><br>
+
+
+    <button type="submit">Send</button>
+
+</form>
+
+
+<label for="currency">Choose a currency:</label>
+
+<select name="currency" id="currency">
+    <option value="zł">zł</option>
+    <option value="usd">usd</option>
+    <option value="uah">uah</option>
+    <option value="eu">eu</option>
+</select>
+<br/>
+<label for="categories">Choose a category:</label>
+
+<select name="category" id="categories">
+    <option value="Entertainment">Entertainment</option>
+    <option value="Travel">Travel</option>
+    <option value="Products">Products</option>
+    <option value="Housing costs">Housing costs</option>
+    <option value="Electronics">Electronics</option>
+    <option value="Subscribes">Subscribes</option>
+</select>
+<ul class="tab-control nav" data-target="#tabs-news-feed-1139" role="tablist">
+    <li role="presentation" class="active" id="1139-12-misyatsiv">
+        <button id="tab-1139-0" role="tab" aria-selected="true" aria-controls="tabs-news-feed-1139-0">
+            12 місяців
+        </button>
+    </li>
+    <li role="presentation" id="1139-30-dniv">
+        <button id="tab-1139-1" role="tab" aria-selected="false" aria-controls="tabs-news-feed-1139-1">
+            30 днів
+        </button>
+    </li>
+</ul>
+<form method="post" action="">
+        {% csrf_token %}
+
+    <input type="date" name="date">
+
+    <input type="submit" value="date" >
+</form>
+
+<svg width="400" height="200" style="border:1px solid #ccc;">
+    <!-- Сітка або осі -->
+    <line x1="50" y1="20" x2="50" y2="180" stroke="black" stroke-width="2"/>
+    <line x1="50" y1="180" x2="380" y2="180" stroke="black" stroke-width="2"/>
+    <polyline fill="none" stroke="#007bff" stroke-width="3"
+              points="50,150 120,120 190,60 260,110 330,30"/>
+
+    <!-- Точки на графіку -->
+    <circle cx="50" cy="150" r="4" fill="red"/>
+    <circle cx="120" cy="120" r="4" fill="red"/>
+    <circle cx="190" cy="60" r="4" fill="red"/>
+    <circle cx="260" cy="110" r="4" fill="red"/>
+    <circle cx="330" cy="30" r="4" fill="red"/>
+</svg>
+
+
+<h2>Expenses and incomes</h2>
+
+<table style="width:100%">
+    <tr>
+        <th>Date</th>
+        <th>Expenses</th>
+        <th>Incomes</th>
+    </tr>
+    <tr>
+        <td>Today</td>
+        <td> 10</td>
+        <td>100</td>
+    </tr>
+    <tr>
+        <td>10.09.2026</td>
+        <td>100</td>
+        <td>250</td>
+    </tr>
+</table>
+
+<p>To understand the example better, we have added borders to the table.</p>
+
+
+</body>
+</html>
+
+
