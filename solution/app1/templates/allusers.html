@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8"/>
+    <title>Tracker</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<p>
+    {{users}}
+    {{transactions}}
+
+</p>
+
+
+{% for user in users %}
+
+<p>login = {{ user.login }}</p>
+
+{% endfor %}
+
+
+<table style="width:100%">
+   <tr>
+        <th>id</th>
+        <th>login</th>
+        <th>name</th>
+        <th>age </th>
+
+    </tr>
+    {% for user in users %}
+
+    <tr>
+        <td>{{user.id}}</td>
+        <td>{{user.login}}</td>
+        <td> {{user.name}}</td>
+        <td>{{user.age}}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+<p>
+    
+</p>
+<table style="width:100%">
+   <tr>
+        <th>id</th>
+        <th>title</th>
+        <th>transaction </th>
+        <th>user_id</th>
+        <th>time_create</th>
+        <th>time_update </th>
+    </tr>
+    {% for transaction  in transactions %}
+
+    <tr>
+        <td>{{transaction.id}}</td>
+        <td> {{transaction.title}}</td>
+        <td>{{transaction.transaction}}</td>
+        <td>{{transaction.user_id}}</td>
+        <td> {{transaction.time_create}}</td>
+        <td>{{transaction.time_update}}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+</body>
+</html>
+
+

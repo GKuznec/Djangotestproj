@@ -10,8 +10,10 @@
     </style>
 </head>
 <body>
-<form method="post" action="">
+<form method="POST" action="">
+
     {% csrf_token %}
+
     <p>Balance</p>
     <input type="text" size="40" name="balance">
 
@@ -58,7 +60,7 @@
         </button>
     </li>
 </ul>
-<form method="post" action="">
+<form method="POST" action="">
         {% csrf_token %}
 
     <input type="date" name="date">

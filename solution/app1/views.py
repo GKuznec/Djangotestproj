@@ -3,17 +3,22 @@ from django.urls import reverse
 from django.shortcuts import render
 import random
 import json
+from .models import USER, TRANSACTION
 def first_page(request):
-    print(request.body)
-    print(request.method)
-    print(request)
-    print(request.GET.dict())
-    # data = json.loads(request.body)
-    # name = data.get('balance')
-    # print(name)
+    if request.method == 'POST':
+        print(request.POST.get('balance'))
+        print(request.POST.get('expenses'))
+        print(request.POST.get('incomes'))
+
+
+    return render(request, "index.html")
+
+def all_users(request):
     context = {
-       "expenses": random.randint(1,100),
-       "incomes": 1000
+        "users": USER.objects.all(),
+        "transactions": TRANSACTION.objects.all(),
     }
 
-    return render(request, "index.html",context = context)
+    return render(request, "allusers.html",context=context)
+
+
